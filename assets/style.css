@@ -10,23 +10,65 @@ body {
 
 .wrapper {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 50vh 50vh;
+    grid-template-columns: 33vw 33vw 33vw;
+    grid-template-rows: 10vh 5vh 85vh;
+    grid-template-areas: 
+    "header header header"
+    "nav nav nav"
+    "main main aside";
+
+}
+
+header {
+    background-color: blueviolet;
+    border: 1px solid grey;
+    grid-area: header;
 }
 
 nav {
-    height: 10vh;
-    background-color: blueviolet;
-    border: 1px solid grey;
+    grid-area: nav;
 }
 
+ul {
+display: inline-block;
+float: right;
+}
+
+li {
+    display: inline-block;
+    float: left;
+}
+
+li a {
+    border: 1px solid grey;
+    color: white;
+    padding: 2vh 4vh;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+}
 
 section {
     background-color: yellow;
     border: 1px solid grey;
-    height: 90vh;
-    width: 100vw;
-    display: grid;
-
+    grid-area: section;
     
+}
+
+main {
+    background-color: greenyellow;
+    border: 1px solid grey;
+    grid-area: main;
+}
+
+aside {
+    background-color: brown;
+    border: 1px solid grey;
+    grid-area: aside;
+
+}
+
+section {
+    height: 100vh;
+    width: 100vw;
+    background-color: beige;
 }
