@@ -1,7 +1,7 @@
 
 
 body {
-    background-color: aliceblue;
+    background-color: rgb(255, 214, 214);
     margin: 0;
     padding: 0;
 }
@@ -10,65 +10,114 @@ body {
 
 .wrapper {
     display: grid;
+    /* column-gap: 0.2rem;
+    row-gap: 0.2rem; */
     grid-template-columns: 33vw 33vw 33vw;
-    grid-template-rows: 10vh 5vh 85vh;
+    grid-template-rows: 20vh 10vh 30vh 40vh;
     grid-template-areas: 
     "header header header"
-    "nav nav nav"
+    "nav2 nav2 nav2"
+    "main main aside"
     "main main aside";
 
 }
 
 header {
-    background-color: blueviolet;
+    background-color: rgb(3, 3, 3);
     border: 1px solid grey;
     grid-area: header;
 }
 
-nav {
-    grid-area: nav;
+.nav1 {
+    grid-area: nav1;
+}
+
+.nav2 {
+    position: sticky;
+    top: 0;
+    grid-area: nav2;
+    background-color: grey;
+}
+
+nav h2 {
+    float: left;
 }
 
 ul {
 display: inline-block;
 float: right;
+
 }
 
 li {
+    
     display: inline-block;
     float: left;
 }
 
 li a {
-    border: 1px solid grey;
+    text-decoration: none;
+    margin: 0.2rem;
+    background-color: darkcyan;
     color: white;
     padding: 2vh 4vh;
     text-transform: uppercase;
-    font-size: 1.5rem;
+    font-size: 1rem;
 }
 
 section {
-    background-color: yellow;
-    border: 1px solid grey;
-    grid-area: section;
+    margin: 1rem;
+    border-radius: 1rem;
+    background-color: rgb(187, 187, 187);
+    border: none;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgb(211, 211, 211);
     
 }
 
 main {
-    background-color: greenyellow;
-    border: 1px solid grey;
+    margin: 1rem 0rem 1rem 1rem;
+    border-radius: 1rem;
+    background-color: rgb(158, 158, 158);
+    border: none;
     grid-area: main;
 }
 
+main img {
+    align-self: center;
+    width: 40%;
+    height: auto;
+}
+
 aside {
-    background-color: brown;
-    border: 1px solid grey;
+    margin: 1rem;
+    border-radius: 1rem;
+    background-color: rgb(255, 180, 180);
+    border: none;
     grid-area: aside;
+   
+}
+
+.asideDiv {
+    background-color: white;
+    width: 5rem;
+    height: 5rem;
+   justify-self: stretch;
 
 }
 
-section {
-    height: 100vh;
-    width: 100vw;
-    background-color: beige;
+@media (max-width: 700px) {
+    .wrapper {
+        display: grid;
+        grid-template-columns: 100vw;
+        grid-template-rows: 30vh 20vh 50vh 100vh;
+        grid-template-areas: 
+        "header"
+        "nav2"
+        "main"
+        "aside";
+    
+
+    }
 }
